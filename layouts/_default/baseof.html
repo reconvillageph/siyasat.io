@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <link rel="icon" type="image/png" href="/assets/logos/logo-only.png">
+    <link rel="stylesheet" href="/styles.css">
+    {{ block "head" . }}{{ end }}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="nav-brand-text">SIYASAT <span class="text-red">LINUX</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/#overview">Overview</a></li>
+                <li><a href="/tools">Tools</a></li>
+                <li><a href="/#download">Download</a></li>
+                <li><a href="/#community">Community</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {{ block "main" . }}{{ end }}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ReconVillagePH. For lawful investigations and authorized security research only.</p>
+            <p class="footer-links">
+                <a href="https://github.com/reconvillageph/siyasat-linux" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <span>•</span>
+                <a href="/#community">Community</a>
+                <span>•</span>
+                <a href="/#download">Download</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>
+

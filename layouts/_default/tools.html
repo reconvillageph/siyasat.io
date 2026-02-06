@@ -1,0 +1,64 @@
+{{ define "title" }}Tools - {{ .Site.Title }}{{ end }}
+
+{{ define "head" }}
+    <link rel="stylesheet" href="/tools.css">
+{{ end }}
+
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="tools-hero">
+        <div class="container">
+            <h1>Siyasat Linux Tools</h1>
+            <p class="subtitle">A comprehensive collection of 100+ OSINT and CTI tools for cyber investigations</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="tools-controls">
+        <div class="container">
+            <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="tool-search" placeholder="Search tools..." aria-label="Search tools">
+            </div>
+
+            <div class="filter-section">
+                <label for="category-filter">Category:</label>
+                <select id="category-filter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="reconnaissance">Reconnaissance</option>
+                    <option value="osint">OSINT</option>
+                    <option value="network">Network Analysis</option>
+                    <option value="web">Web Analysis</option>
+                    <option value="dns">DNS</option>
+                    <option value="social">Social Media</option>
+                    <option value="email">Email</option>
+                    <option value="data">Data Analysis</option>
+                    <option value="automation">Automation</option>
+                    <option value="utilities">Utilities</option>
+                    <option value="productivity">Productivity</option>
+                </select>
+            </div>
+
+            <div class="tools-count">
+                <span id="tools-count">0</span> tools
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Grid Section -->
+    <section class="tools-section">
+        <div class="container">
+            <div id="tools-grid" class="tools-grid">
+                <!-- Tools will be dynamically inserted here by tools.js -->
+            </div>
+        </div>
+    </section>
+{{ end }}
+
+{{ define "scripts" }}
+    <script src="/tools.js"></script>
+{{ end }}
+

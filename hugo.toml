@@ -1,0 +1,13 @@
+baseURL = 'https://siyasat.io/'
+languageCode = 'en-us'
+title = 'Siyasat Linux'
+publishDir = "docs"
+
+[params]
+  description = 'A Debian-based OSINT/CTI Distribution for Cyber Investigations'
+  author = 'ReconVillagePH'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

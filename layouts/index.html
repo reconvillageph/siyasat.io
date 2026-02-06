@@ -1,0 +1,101 @@
+{{ define "title" }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ end }}
+
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section id="overview" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="/assets/logos/logo-text-main.png" alt="Siyasat Linux" class="hero-logo-text">
+                <p class="hero-subtitle">A Debian–based OSINT/CTI Distribution for Cyber Investigations</p>
+                <div class="hero-cta">
+                    <a href="https://github.com/reconvillageph/siyasat-linux" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Source</a>
+                    <a href="https://archive.org/details/reconvillageph-siyasat-linux" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Download VM</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/reconvillageph/siyasat-linux" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=u6w0bu_xWIs" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    <a href="https://web.facebook.com/profile.php?id=100093277340360" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="fingerprint-watermark"></div>
+    </section>
+
+    <!-- What is Siyasat Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>What is Siyasat Linux?</h2>
+            <p>Siyasat Linux is a specialized distribution designed for Open Source Intelligence (OSINT) investigations, catering to the needs of threat intelligence analysts and other intelligence professionals. Built on the foundations of Debian, it provides a comprehensive suite of tools and a customized environment to streamline investigation workflows.</p>
+        </div>
+    </section>
+
+    <!-- Download & Verify Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2>Get the Distro</h2>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <h3 id="verify">Download & Verify</h3>
+                    <div class="vm-screenshot">
+                        <img src="/assets/wallpapers/siyasat-dark.png" alt="Siyasat Linux VM Screenshot">
+                    </div>
+                    <div class="checksum-section">
+                        <a href="https://archive.org/download/reconvillageph-siyasat-linux/Siyasat%20Linux.ova" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-bottom: 1.5rem; display: inline-block;">Download VM (OVA)</a>
+
+                        <p><strong>SHA-256 Checksum:</strong></p>
+                        <code class="checksum">06cfaf8f640c751dfab71918715fa8036ac7a9edc0712a721604faeda9ef4534</code>
+
+                        <p class="verify-title"><strong>Linux/macOS:</strong></p>
+                        <pre><code>sha256sum "Siyasat Linux.ova"</code></pre>
+
+                        <p class="verify-title"><strong>Windows:</strong></p>
+                        <pre><code>Get-FileHash "Siyasat Linux.ova" -Algorithm SHA256</code></pre>
+                    </div>
+                </div>
+
+                <div class="download-card">
+                    <h3 id="build">Build & Customize</h3>
+                    <ul class="build-list">
+                        <li>Built on Debian</li>
+                        <li>SaltStack-based build process</li>
+                        <li>Fully customizable and reproducible</li>
+                    </ul>
+                    <a href="https://github.com/reconvillageph/siyasat-linux#build" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Build Instructions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <h2>Documentation & Community</h2>
+            <p>Built by <a href="https://web.facebook.com/profile.php?id=100093277340360" target="_blank" rel="noopener noreferrer">ReconVillagePH</a>
+                <span class="social-icon-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </span>
+            </p>
+            <div class="community-links">
+                <a href="https://github.com/reconvillageph/siyasat-linux" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+                <a href="https://github.com/reconvillageph" target="_blank" rel="noopener noreferrer" class="btn btn-outline">ReconVillagePH</a>
+            </div>
+        </div>
+    </section>
+{{ end }}
+
