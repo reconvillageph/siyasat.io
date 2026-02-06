@@ -156,6 +156,107 @@ body::before {
     display: none;
 }
 
+/* Mobile Navigation */
+.nav-mobile {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-tools {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 1003;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-menu-links li {
+    margin: 2rem 0;
+}
+
+.mobile-menu-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    display: block;
+    padding: 0.5rem 2rem;
+}
+
+.mobile-menu-links a:hover {
+    color: var(--accent-red);
+}
+
 /* ===== Hero Section ===== */
 .hero {
     position: relative;
@@ -352,6 +453,8 @@ section p {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .download-card h3 {
@@ -378,11 +481,22 @@ section p {
 
 .checksum-section {
     margin-top: 1.5rem;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .checksum-section p {
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
+    text-align: left;
+}
+
+.checksum-section .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .checksum {
@@ -395,11 +509,15 @@ section p {
     word-break: break-all;
     margin-bottom: 1.5rem;
     border: 1px solid var(--border-color);
+    text-align: left;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
 
 .verify-title {
     margin-top: 1rem;
     margin-bottom: 0.25rem !important;
+    text-align: left;
 }
 
 pre {
@@ -409,12 +527,17 @@ pre {
     overflow-x: auto;
     margin-bottom: 1rem;
     border: 1px solid var(--border-color);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 pre code {
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
     color: var(--text-primary);
+    white-space: pre;
+    word-break: normal;
+    overflow-wrap: normal;
 }
 
 .build-list {
@@ -506,13 +629,13 @@ pre code {
         font-size: 1rem;
     }
 
-    .nav-links {
-        gap: 1rem;
-        font-size: 0.85rem;
+    /* Hide desktop nav, show mobile nav */
+    .nav-links-desktop {
+        display: none;
     }
 
-    .nav-links a {
-        font-size: 0.85rem;
+    .nav-mobile {
+        display: flex;
     }
 
     /* Hero Section */
@@ -573,6 +696,25 @@ pre code {
         object-fit: contain;
     }
 
+    .checksum-section {
+        text-align: center;
+    }
+
+    .checksum-section .btn {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .checksum {
+        font-size: 0.75rem;
+        padding: 0.875rem;
+        text-align: left;
+    }
+
+    pre {
+        text-align: left;
+    }
+
     /* Sections */
     section {
         padding: 3rem 0;
@@ -618,24 +760,39 @@ pre code {
         padding: 0.5rem 0;
     }
 
-    .nav-logo {
-        height: 35px;
-    }
-
     .nav-brand-text {
         font-size: 0.9rem;
     }
 
-    .nav-links {
-        gap: 0.5rem;
-    }
-
-    .nav-links a {
-        font-size: 0.75rem;
+    .btn-tools {
+        padding: 0.4rem 0.875rem;
+        font-size: 0.85rem;
     }
 
     .theme-toggle {
         padding: 0.25rem;
+    }
+
+    .hamburger {
+        width: 26px;
+        height: 26px;
+    }
+
+    .hamburger span {
+        width: 26px;
+        height: 2.5px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .mobile-menu-links a {
+        font-size: 1.35rem;
     }
 
     /* Hero Section */
@@ -691,6 +848,10 @@ pre code {
         padding: 1.25rem;
     }
 
+    .download-card {
+        padding: 1.25rem;
+    }
+
     .download-card h3 {
         font-size: 1.25rem;
     }
@@ -702,6 +863,34 @@ pre code {
     .vm-screenshot img {
         max-height: 200px;
         object-fit: contain;
+    }
+
+    .checksum-section {
+        text-align: center;
+    }
+
+    .checksum-section .btn {
+        width: 100%;
+        margin-bottom: 1.25rem;
+        padding: 0.875rem 1rem;
+    }
+
+    .checksum {
+        font-size: 0.7rem;
+        padding: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .checksum-section p {
+        font-size: 0.9rem;
+    }
+
+    pre {
+        margin-bottom: 1rem;
+    }
+
+    pre code {
+        font-size: 0.7rem;
     }
 
     /* Code blocks */
@@ -731,8 +920,31 @@ pre code {
         font-size: 0.8rem;
     }
 
-    .nav-links a {
-        font-size: 0.7rem;
+    .btn-tools {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .hamburger {
+        width: 24px;
+        height: 24px;
+    }
+
+    .hamburger span {
+        width: 24px;
+        height: 2px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu-links a {
+        font-size: 1.25rem;
     }
 
     .hero-logo-text {
@@ -753,6 +965,37 @@ pre code {
 
     .download-card {
         padding: 1rem;
+        overflow: hidden;
+    }
+
+    .checksum {
+        font-size: 0.65rem;
+        padding: 0.625rem;
+        word-break: break-all;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+
+    pre {
+        padding: 0.625rem;
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    pre code {
+        font-size: 0.65rem;
+        display: block;
+    }
+
+    .checksum-section .btn {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .checksum-section p,
+    .verify-title {
+        font-size: 0.85rem;
     }
 }
 
