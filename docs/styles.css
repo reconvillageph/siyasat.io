@@ -365,12 +365,15 @@ section p {
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid var(--border-color);
+    background-color: var(--bg-tertiary);
 }
 
 .vm-screenshot img {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
+    max-height: 400px;
 }
 
 .checksum-section {
@@ -486,9 +489,36 @@ pre code {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    /* Navigation */
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .nav-logo {
+        height: 40px;
+    }
+
+    .nav-brand-text {
+        font-size: 1rem;
+    }
+
     .nav-links {
         gap: 1rem;
         font-size: 0.85rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 70vh;
+        padding: 3rem 0;
     }
 
     .hero-logo-text {
@@ -496,25 +526,85 @@ pre code {
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
     }
 
     .hero-cta {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0 1rem;
     }
 
+    .btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.875rem 1.5rem;
+    }
+
+    .social-links {
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .social-link svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Download Section */
     .download-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .download-card {
+        padding: 1.5rem;
+    }
+
+    .vm-screenshot {
+        margin-bottom: 1.25rem;
+    }
+
+    .vm-screenshot img {
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    /* Sections */
+    section {
+        padding: 3rem 0;
     }
 
     section h2 {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
 
+    /* Community Links */
     .community-links {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .community-link {
+        width: 100%;
+    }
+
+    /* Code blocks */
+    pre {
+        font-size: 0.85rem;
+        padding: 1rem;
+        overflow-x: auto;
+    }
+
+    .checksum-text,
+    .command-text {
+        font-size: 0.75rem;
+        word-break: break-all;
     }
 }
 
@@ -523,20 +613,146 @@ pre code {
         padding: 0 1rem;
     }
 
+    /* Navigation */
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .nav-logo {
+        height: 35px;
+    }
+
+    .nav-brand-text {
+        font-size: 0.9rem;
+    }
+
     .nav-links {
         gap: 0.5rem;
     }
 
     .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .theme-toggle {
+        padding: 0.25rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 60vh;
+        padding: 2rem 0;
+    }
+
+    .hero-logo-text {
+        width: 280px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-cta {
+        padding: 0 0.5rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .social-link svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Sections */
+    section {
+        padding: 2.5rem 0;
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    section p {
+        font-size: 0.95rem;
+    }
+
+    /* Download Cards */
+    .download-card {
+        padding: 1.25rem;
+    }
+
+    .download-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .vm-screenshot {
+        margin-bottom: 1rem;
+    }
+
+    .vm-screenshot img {
+        max-height: 200px;
+        object-fit: contain;
+    }
+
+    /* Code blocks */
+    pre {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .checksum-text,
+    .command-text {
+        font-size: 0.7rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 1.5rem 0;
+    }
+
+    .footer p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .nav-brand-text {
         font-size: 0.8rem;
     }
 
-    .hero-logo {
-        width: 60px;
+    .nav-links a {
+        font-size: 0.7rem;
     }
 
-    .hero-title {
-        font-size: 2rem;
+    .hero-logo-text {
+        width: 240px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .vm-screenshot img {
+        max-height: 150px;
+    }
+
+    .download-card {
+        padding: 1rem;
     }
 }
 
