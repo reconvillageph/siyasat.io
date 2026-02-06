@@ -86,6 +86,17 @@ body::before {
     gap: 0.75rem;
 }
 
+.nav-brand-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.nav-brand-link:hover {
+    opacity: 0.8;
+}
+
 .nav-logo {
     height: 50px;
     width: auto;
