@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:40097/categories/</loc>
+    <loc>https://siyasat.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:40097/</loc>
+    <loc>https://siyasat.io/</loc>
   </url><url>
-    <loc>http://localhost:40097/tags/</loc>
+    <loc>https://siyasat.io/tags/</loc>
   </url><url>
-    <loc>http://localhost:40097/tools/</loc>
+    <loc>https://siyasat.io/tools/</loc>
   </url>
 </urlset>
