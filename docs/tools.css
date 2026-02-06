@@ -25,7 +25,7 @@
     background: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
-    top: 70px;
+    top: 66px;
     z-index: 100;
 }
 
@@ -242,7 +242,13 @@
     }
 
     .tools-controls {
-        top: 60px;
+        top: 58px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-controls {
+        top: 54px;
     }
 }
 
